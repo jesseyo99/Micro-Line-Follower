@@ -6,15 +6,16 @@ import ustruct
 class SensorBar:
     lastBarValue = 0
     lastBarRawValue = b'\x00'
-    def __init__(self,address = 0x3E, resetPin = 255, interruptPin = 255, oscillatorPin = 255,sda = Pin(0),scl = Pin(1)):
+    def __init__(self,address = 0x3E, resetPin = 255, interruptPin = 255, oscillatorPin = 255,sda = 0,scl = 1):
         self.deviceAddress = address
         self.pinInterrupt = interruptPin
         self.pinOscillator = oscillatorPin
         self.pinReset = resetPin
         self.invertBits = 0
         self.barStrobe = 0
-        
-        self.i2c = SoftI2C(scl,sda)
+        sdaPin = Pin(sda)
+        sclPin = Pin(scl)
+        self.i2c = SoftI2C(sclPin,sdaPin)
 
     def begin(self):
         returnVar = 0

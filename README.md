@@ -6,7 +6,7 @@ SparkFun's original library can be found [here](https://github.com/sparkfun/Spar
 This library only includes the basic Line Follower Array code to get the position, this library will continue to be updated until all features from the original code are present.
 
 # MicroPython Code Usage
-Simple object intialization with default pins for Pi Pico (SDA = 1, SCL = 0):
+Simple object intialization with default I2C pins for Pi Pico (SDA = 1, SCL = 0):
 ```python
 from sensorbar import SensorBar
 
@@ -14,3 +14,10 @@ mySensor = SensorBar()
 
 ```
 
+Object initialization with different I2C pins:
+
+```python
+from sensorbar import SensorBar
+
+mySensor = SensorBar(sda = 10, scl = 11)
+```

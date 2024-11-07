@@ -3,10 +3,10 @@ import time
 import ustruct
 
 
-class sensorbar:
+class SensorBar:
     lastBarValue = 0
     lastBarRawValue = b'\x00'
-    def __init__(self,address, resetPin = 255, interruptPin = 255, oscillatorPin = 255,sda = Pin(0),scl = Pin(1)):
+    def __init__(self,address = 0x3E, resetPin = 255, interruptPin = 255, oscillatorPin = 255,sda = Pin(0),scl = Pin(1)):
         self.deviceAddress = address
         self.pinInterrupt = interruptPin
         self.pinOscillator = oscillatorPin

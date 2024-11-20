@@ -21,3 +21,17 @@ from sensorbar import SensorBar
 
 mySensor = SensorBar(sda = 10, scl = 11)
 ```
+# Functions
+The begin function starts the array
+```python
+
+mySensor.begin()
+
+```
+The GetPosition function returns a value from -127 to 127 with 0 in the middle of the sensor
+
+```python
+
+position = mySensor.GetPosition()
+
+```
